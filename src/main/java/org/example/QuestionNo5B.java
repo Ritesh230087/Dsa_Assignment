@@ -7,6 +7,7 @@ public class QuestionNo5B{
         if (n == 0) return 0;
         Deque<Integer> minDeque = new LinkedList<>();
         Deque<Integer> maxDeque = new LinkedList<>();
+
         int left = 0;
         int longest = 0;
         for (int right = 0; right < n; right++) {
@@ -23,10 +24,13 @@ public class QuestionNo5B{
                 if (maxDeque.peekFirst() == left) maxDeque.pollFirst();
                 left++;
             }
+
             longest = Math.max(longest, right - left + 1);
         }
+
         return longest;
     }
+
     public static void main(String[] args) {
         // Example 1
         int[] nums1 = {1, 3, 6, 7, 9, 2, 5, 8};
